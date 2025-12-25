@@ -1,0 +1,89 @@
+.contactSection {
+  max-width: 820px;
+  margin: 48px auto;
+  padding: 24px;
+  color: var(--white);
+  float: left;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: contactFadeUp 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 80ms;
+}
+
+.introText {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  opacity: 0;
+  animation: contactFadeUp 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 180ms;
+}
+
+.contactForm {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: contactFadeUp 540ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 320ms;
+}
+
+.contactForm label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contactForm input,
+.contactForm textarea {
+  background: var(--dusk-blue-transparent-2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--white);
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: 2px solid rgba(68, 89, 141, 0.6);
+  border-color: rgba(68, 89, 141, 0.8);
+}
+
+.submitButton {
+  margin-top: 6px;
+  background: var(--dusk-blue);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  opacity: 0;
+  animation: contactFadeUp 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 520ms;
+}
+.submitButton:hover {
+  transform: translateY(-2px);
+  background: var(--dusk-blue-transparent);
+}
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 250px;
+}

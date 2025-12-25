@@ -1,0 +1,126 @@
+.cta {
+  background: var(--dusk-blue);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid var(--slate-grey);
+  display: inline-block;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 48px 12px;
+  flex-wrap: wrap;
+}
+.heroInner {
+  flex: 1;
+  text-align: left;
+  max-width: 720px;
+  min-width: 250px;
+}
+.heroLead {
+  color: #ddd;
+  opacity: 0.95;
+  margin-top: 12px;
+  font-size: clamp(32px, 6vw, 48px);
+  line-height: 1.2;
+  text-align: center;
+}
+.heroVisual {
+  width: clamp(250px, 50vw, 320px);
+  height: clamp(250px, 50vw, 320px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--dusk-blue);
+}
+.heroCtas {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.section {
+  padding: clamp(32px, 8vw, 48px) 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+.section h2 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+.sectionLead {
+  color: #ccc;
+  margin-bottom: 12px;
+}
+.sectionRow {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.heroSub {
+  color: var(--slate-grey);
+  margin-top: 12px;
+  line-height: 1.6;
+  font-size: clamp(14px, 2vw, 16px);
+}
+.imgContainer {
+  background: url("../img/Nerd-pana.png");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.skillsP {
+  margin-top: 30px;
+  line-height: 1.6;
+  color: var(--slate-grey);
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 32px 12px;
+  }
+
+  .heroInner {
+    text-align: center;
+  }
+
+  .heroVisual {
+    order: -1;
+  }
+
+  .heroCtas {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 24px 8px;
+    gap: 16px;
+  }
+
+  .heroLead {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  .section {
+    padding: clamp(24px, 6vw, 32px) 8px;
+  }
+}

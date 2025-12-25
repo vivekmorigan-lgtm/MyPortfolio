@@ -1,0 +1,65 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: clamp(50px, 8vw, 60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  border-bottom: 1px solid #aaa;
+  padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 15px);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
+.brand {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: clamp(16px, 4vw, 20px);
+}
+.btn {
+  background: var(--slate-grey-transparent);
+  color: var(--white);
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 2vw, 14px);
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid var(--white);
+  cursor: pointer;
+  font-size: clamp(12px, 2vw, 14px);
+}
+.btn:hover {
+  background: var(--slate-grey);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    height: 50px;
+    padding: 8px 12px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    height: 45px;
+    padding: 6px 10px;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}
