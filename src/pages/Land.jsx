@@ -99,7 +99,9 @@ function Land() {
     <section className={styles.hero} ref={sectionRef}>
       <div className={styles.heroInner} ref={heroInnerRef}>
         <TextPressure text="Hi there!" />
-        <h1 className={styles.heroLead}>I am Twinzler</h1>
+        <h1 className={styles.heroLead}>
+          I am <div className={styles.highlight}>Twinzler</div>
+        </h1>
         <p className={styles.skillsP}>Ui/Ux designer | Web dev</p>
         <p className={styles.heroSub}>
           I create polished web experiences blending design and interactivity to
@@ -107,11 +109,14 @@ function Land() {
           frontend development skills.
         </p>
         <div className={styles.heroCtas} ref={ctasRef}>
-          <a href="https://github.com/vivekmorigan-lgtm" className={styles.cta}>
+          <a
+            href="https://github.com/vivekmorigan-lgtm?tab=repositories"
+            className={styles.cta}
+          >
             View All Projects
           </a>
           <a href="mailto:Twinzler@proton.me" className={styles.ctaSecondary}>
-            Hire Me
+            Mail Me
           </a>
         </div>
       </div>

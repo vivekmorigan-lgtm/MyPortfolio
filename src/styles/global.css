@@ -15,6 +15,10 @@
   --cube-face-bg: #060010;
 }
 
+@font-face {
+  font-family: "minecraft";
+  src: url("../fonts/Minecraft.ttf") format("truetype");
+}
 * {
   padding: 0;
   margin: 0;
@@ -22,6 +26,8 @@
 }
 body {
   background: #000;
+  color: var(--white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -41,7 +47,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: radial-gradient(circle, rgb(52, 77, 138), #747385ff);
+  background: #060010;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -52,7 +58,6 @@ li {
   list-style-type: none;
 }
 
-/* Responsive Typography */
 html {
   font-size: clamp(14px, 2vw, 16px);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import styles from "../styles/nav.module.css";
 
@@ -6,10 +6,38 @@ export default function Nav() {
   const navRef = useRef(null);
   const brandRef = useRef(null);
   const btnRef = useRef(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const shouldShrink = scrollPosition > 100;
+
+      if (shouldShrink !== isScrolled) {
+        setIsScrolled(shouldShrink);
+        gsap.to(navRef.current, {
+          width: shouldShrink ? "90%" : "100%",
+          backgroundColor: shouldShrink
+            ? "rgba(255, 255, 255, 0.01)"
+            : "rgba(0, 0, 0, 0.8)",
+          borderRadius: shouldShrink ? "12px" : "0px",
+          left: shouldShrink ? "5%" : "0%",
+          duration: 0.4,
+          ease: "power2.inOut",
+          borderBottom: shouldShrink
+            ? "1px solid rgba(255, 255, 255, 0.2)"
+            : "none",
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isScrolled]);
+
+  // Initial animations and button interactions
+  useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate nav brand
       gsap.from(brandRef.current, {
         opacity: 0,
         x: -20,
@@ -17,7 +45,6 @@ export default function Nav() {
         ease: "power3.out",
       });
 
-      // Animate nav button
       gsap.from(btnRef.current, {
         opacity: 0,
         x: 20,
@@ -25,7 +52,6 @@ export default function Nav() {
         ease: "power3.out",
       });
 
-      // Hover animation for button
       if (btnRef.current) {
         btnRef.current.addEventListener("mouseenter", () => {
           gsap.to(btnRef.current, {
@@ -56,7 +82,9 @@ export default function Nav() {
       <button
         className={styles.btn}
         ref={btnRef}
-        onClick={() => { window.location.href = "https://github.com/vivekmorigan-lgtm"; }}
+        onClick={() => {
+          window.location.href = "https://github.com/vivekmorigan-lgtm";
+        }}
       >
         Hire me
       </button>

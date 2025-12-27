@@ -2,15 +2,16 @@
   position: fixed;
   top: 0;
   width: 100%;
+  left: 0;
   height: clamp(50px, 8vw, 60px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 50;
-  border-bottom: 1px solid #aaa;
   padding: clamp(8px, 2vw, 10px) clamp(12px, 3vw, 15px);
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
+  transition: border-bottom 0.3s ease;
 }
 .brand {
   color: var(--white);
