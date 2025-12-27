@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import styles from "../styles/CustomCursor.module.css";
+import styles from "../styles/CustomCursor2.module.css";
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
@@ -51,21 +51,6 @@ export default function CustomCursor() {
       }
     };
 
-    const resetIdle = () => {
-      setIsIdle(false);
-      setShowTimer(false);
-      setTimerSeconds(0);
-      if (idleTimerRef.current) {
-        clearTimeout(idleTimerRef.current);
-      }
-      if (delayedTimerRef.current) {
-        clearTimeout(delayedTimerRef.current);
-      }
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
-    };
-
     document.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseout", handleMouseOut);
 
@@ -84,8 +69,8 @@ export default function CustomCursor() {
         ref={cursorRef}
         className={`${styles.cursorOutline}`}
         style={{
-          width: isHovering ? "30px" : "50px",
-          height: isHovering ? "30px" : "50px",
+          width: isHovering ? "30px" : "100px",
+          height: isHovering ? "30px" : "100px",
           background: isHovering ? "rgba(148, 221, 255, 0.5)" : "#ffffff30",
         }}
       />

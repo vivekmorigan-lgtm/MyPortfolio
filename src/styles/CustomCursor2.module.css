@@ -1,0 +1,23 @@
+:global(html) {
+  cursor: none !important;
+}
+
+:global(body) {
+  cursor: none !important;
+}
+
+:global(*) {
+  cursor: none !important;
+}
+
+.cursorOutline {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease-in-out, width 0.3s ease-out,
+    height 0.3s ease-out, border-color 0.3s ease-out,
+    border-radius 0.3s ease-out;
+  backdrop-filter: invert(1);
+}

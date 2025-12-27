@@ -2,6 +2,7 @@ import Land from "./pages/Land.jsx";
 import Nav from "./components/Nav";
 import ClickSpark from "./components/cursor.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
+import CustomCursor2 from "./components/CustomCursor2.jsx";
 import Divider from "./components/divider.jsx";
 import About from "./pages/About.jsx";
 import Skills from "./pages/Skills.jsx";
